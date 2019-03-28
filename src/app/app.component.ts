@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,20 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	posts = [
-		{ title : 'Mon premier post',
-		  content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
-		  loveIts : 0,
-		  created_at : new Date() }, 
 
-		{ title : 'Mon deuxième post',
-		  content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
-		  loveIts : 0,
-		  created_at : new Date() }, 
-		  
-		{ title : 'Mon troisième post',
-		  content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
-		  loveIts : 0,
-		  created_at : new Date() }, 
-	];
+	constructor() {
+		var config = {
+		    apiKey: "AIzaSyDy6c1iSmpIAOG_3JtTly8nDSid5ItwmnM",
+		    authDomain: "blog-83a26.firebaseapp.com",
+		    databaseURL: "https://blog-83a26.firebaseio.com",
+		    projectId: "blog-83a26",
+		    storageBucket: "blog-83a26.appspot.com",
+		    messagingSenderId: "861294991158"
+  		};
+  
+  		firebase.initializeApp(config);
+	}
 }
